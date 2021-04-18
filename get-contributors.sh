@@ -5,7 +5,6 @@ REPOSITORY=$(echo $1 | cut -f-5 -d"/")
 #for the message if the fetch fails due to API limit
 COMANDO='bash get-forks.sh '$REPOSITORY
 
-
 github-scrap(){
 #API linked contributors
 cat rawfetch* | grep "\"login\"" >> aplogin0
@@ -33,14 +32,14 @@ mkdir -p $REPO
 cd $REPO
 URL=$2
 #global counter
-FOLDER=../github-api/
+FOLDER=../get-contributors/
 
 fetch(){
     URLAPI='https://api.github.com/repos/'$URL
     URLAPI=$URLAPI'/contributors?per_page=90&anon=1&page='$i
-    curl -H "Accept: application/vnd.github.v3+json" $URLAPI > $FILE
+    curl --silent -H "Accept: application/vnd.github.v3+json" $URLAPI > $FILE
 
-    ${FOLDER}github-valid.sh $FILE $COMANDO || exit 1
+    ${FOLDER}github-valid.sh $FILE "$COMANDO" || exit 1
 
     #if the retrieved file is empty, no further fetch in needed
     if cmp -s $FILE ${FOLDER}empty;then

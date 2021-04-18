@@ -8,7 +8,8 @@ get the contributors from any given github URL
 # data
 * ../api-forks-#repository#/ is the incremental state
 * ../forks-#repository#  is the final query
-  
+* you will not get all of them, but the ones that are displayed in the github website will
+
 This will create a folder just outside the repo, named api-forks-#repository#  
 All the files there are a 'state', incrementally used to parse the final query, this state design was chosen due to github-api download limit  
 If you see a "API limit reached" message just re-run the script some time later, nothing already downloaded will be re-downloaded
