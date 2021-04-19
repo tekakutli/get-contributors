@@ -2,8 +2,8 @@
 get the contributors from any given github URL
 
 # usage
-* cd forks-that-are-updated
-* bash get-forks.sh https://github.com/#owner#/#repository#
+* cd get-contributors
+* bash get-contributors.sh https://github.com/#owner#/#repository#
 
 # data
 * ../api-forks-#repository#/ is the incremental state
