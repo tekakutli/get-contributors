@@ -9,7 +9,7 @@ if (grep -q 'API rate limit exceeded' "$1" || [ ! -s $1 ] );then
        printf "Github API download limit reached, attempt again after some hours:\n\n      \$ $COMMAND\n\nthe full fetch requires several runs\nwhen its done you will no longer see this message"
        printf "\n\n\n\n\n"
        #check the existance of this file from other scripts to see if its fine to continue, if it exists its not
-       touch exit-everything
+       rm $1
        exit 1
 fi
 

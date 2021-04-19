@@ -51,6 +51,7 @@ fetch(){
 
 for i in {1..100}
 do
+    echo $i
     FILE='rawfetch-page-'$i
     #when re runned it skips the fetch of pages already downloaded
     if [ -f $FILE ]; then
