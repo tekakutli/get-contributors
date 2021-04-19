@@ -43,6 +43,7 @@ fetch(){
 
     #if the retrieved file is empty, no further fetch in needed
     if cmp -s $FILE ${FOLDER}empty;then
+        rm $FILE
         github-scrap
         exit
     fi
